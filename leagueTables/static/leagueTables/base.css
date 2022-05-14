@@ -1,0 +1,17 @@
+header p {
+    font-style: italic;
+    color: gray;
+}
+
+body {
+    background-color: white;
+
+}
+
+main {
+   width: 800px;
+   margin: auto;
+   padding: 10px;
+   background-color: white;
+   border-radius: 6px;
+}
