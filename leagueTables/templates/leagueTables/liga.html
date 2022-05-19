@@ -39,15 +39,16 @@
   {% endfor %}
   </tbody>
 </table>
+  {% for jogo in jogos %}
+    {% if jogo.concluido %}
+      <p class="bg-info"><a href="{% url 'leagueTables:simulaJogo' jogo.id %}" class="btn btn-warning btn-sm" style="float: right; margin-right: 10px">Simular </a>{{ jogo.golosCasa }} {{ jogo }} {{ jogo.golosFora }}</p>
+    {% else %}
+      <p class="bg-light"><a href="{% url 'leagueTables:simulaJogo' jogo.id %}" class="btn btn-warning btn-sm" style="float: right; margin-right: 10px">Simular </a>{{ jogo.golosCasa }} {{ jogo }} {{ jogo.golosFora }}</p>
+    {% endif %}
+    
+    
+  
+  {% endfor %}
 
-    {% for jornada in liga.jornadas.all %}
-        <header class="mt-4 p-5 bg-primary rounded text-center ">
-        <p>Jornada</p>
-        {% for jogo in jornada.listaJogos.all %}
-            <p class="bg-light"><a href="{% url 'simulaJogo' jogo.id %}" class="btn btn-warning btn-sm" style="float: right; margin-right: 10px">Simular </a>{{ jogo.golosCasa }} {{ jogo }} {{ jogo.golosFora }}</p>
 
-        {% endfor %}
-        </header>
-        <p></p>
-    {% endfor %}
 {% endblock %}

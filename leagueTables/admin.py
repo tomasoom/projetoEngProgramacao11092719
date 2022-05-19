@@ -1,5 +1,5 @@
 from django.contrib import admin
-from leagueTables.models import Clube, Jogo, Jornada, Liga
+from .models import *
 
 # Register your models here.
 admin.site.register(Clube)
